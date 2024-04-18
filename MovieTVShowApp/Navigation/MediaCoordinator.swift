@@ -7,42 +7,51 @@
 
 import UIKit
 
-class TabCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
+protocol MediaCoordinatorProtocol: Coordinator {
+    func showMovieTVShowViewController()
+}
+
+class MediaCoordinator: Coordinator {
+    weak var finishDelegate: CoordinatorFinishDelegate?
+    
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController) {
+    var childCoordinators = [Coordinator]()
+    
+    var type: CoordinatorType { .media }
+    
+    required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        showMovieTVShows()
+        showMovieTVShowsViewController()
     }
     
-    func showMovieTVShows() {
+    func showMovieTVShowsViewController() {
         let movieTVShowViewController = MovieTVShowViewController.instantiate()
-        movieTVShowViewController.coordinator = self
-        navigationController.pushViewController(movieTVShowViewController, animated: false)
+        movieTVShowViewController.selectMovieTVShowClosure = { [weak self] event in
+            switch event {
+            case .movieDetails(let movieId):
+                self?.showMovieDetails(movieId)
+            case .tvShowDetails(let tvShowId):
+                self?.showTVShowDetails(tvShowId)
+            }
+        }
+        navigationController.pushViewController(movieTVShowViewController, animated: true)
     }
     
-    func showDetails(movie: Movie) {
-        let detailsViewController = DetailsViewController.instantiate()
-        detailsViewController.coordinator = self
-        detailsViewController.movie = movie
-        navigationController.pushViewController(detailsViewController, animated: true)
+    func showMovieDetails(_ movieId: Int) {
+        let movieDetailsViewController = MovieDetailsViewController.instantiate()
+        movieDetailsViewController.movieId = movieId
+        movieDetailsViewController.hidesBottomBarWhenPushed = true
+        navigationController.pushViewController(movieDetailsViewController, animated: true)
     }
     
-    func showFavorites() {
-        let favoritesViewController = FavoritesTableViewController.instantiate()
-        favoritesViewController.coordinator = self
-        navigationController.pushViewController(favoritesViewController, animated: true)
-    }
-    
-    func showError(_ error: Error) {
-        let title = "Error"
-        let message = error.localizedDescription
-        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertViewController.addAction(.init(title: "Cancel", style: .cancel))
-        navigationController.present(alertViewController, animated: true)
+    func showTVShowDetails(_ tvShowId: Int) {
+        let tvShowDetailsViewController = TVShowDetailsViewController.instantiate()
+        tvShowDetailsViewController.tvShowId = tvShowId
+        tvShowDetailsViewController.hidesBottomBarWhenPushed = true
+        navigationController.pushViewController(tvShowDetailsViewController, animated: true)
     }
 }

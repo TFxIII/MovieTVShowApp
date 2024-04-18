@@ -8,14 +8,14 @@
 import Foundation
 import Alamofire
 
+typealias ResultClosure<T> = (Result<T, Error>) -> Void
+
 class NetworkService {
     
-    let path = "https://api.themoviedb.org/3/discover/movie?api_key=65a081f93338ea1a699e5b9c9dc0cfc0"
-    
-    func getMovies(completion: @escaping (Result<Page, Error>) -> Void) {
-        AF.request(path)
+    private func request<T: Decodable>(endpoint: Endpoint, completion: @escaping ResultClosure<T>) {
+        AF.request(endpoint)
             .validate()
-            .responseDecodable(of: Page.self) { response in
+            .responseDecodable(of: T.self) { response in
                 switch response.result {
                 case .success(let success):
                     completion(.success(success))
@@ -24,5 +24,29 @@ class NetworkService {
                     completion(.failure(error))
                 }
             }
+    }
+    
+    func getMovies(completion: @escaping ResultClosure<MoviePage>) {
+        request(endpoint: .movies, completion: completion)
+    }
+    
+    func getTVShows(completion: @escaping ResultClosure<TVShowPage>) {
+        request(endpoint: .tvShow, completion: completion)
+    }
+    
+    func getMovieDetails(movieId: Int, completion: @escaping ResultClosure<MovieDetails>) {
+        request(endpoint: .movieDetails(id: movieId), completion: completion)
+    }
+    
+    func getTVShowDetails(tvShowId: Int, completion: @escaping ResultClosure<TVShowDetails>) {
+        request(endpoint: .tvShowDetails(id: tvShowId), completion: completion)
+    }
+    
+    func searchMovies(query: String, completion: @escaping ResultClosure<MoviePage>) {
+        request(endpoint: .searchMovies(query: query), completion: completion)
+    }
+    
+    func searchTVShows(query: String, completion: @escaping ResultClosure<TVShowPage>) {
+        request(endpoint: .searchTVShow(query: query), completion: completion)
     }
 }

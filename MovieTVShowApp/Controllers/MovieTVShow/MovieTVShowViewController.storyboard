@@ -1,25 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--MovieTV Show View Controller-->
+        <scene sceneID="VtP-Y2-jvq">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController storyboardIdentifier="MovieTVShowViewController" id="ZVU-Pj-GyF" customClass="MovieTVShowViewController" customModule="MovieTVShowApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h7q-kl-UPA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3l6-m3-7pW">
+                                <rect key="frame" x="0.0" y="59" width="393" height="87"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Movie or TV Show title/name ..." translatesAutoresizingMaskIntoConstraints="NO" id="4by-nz-bTL">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                        <connections>
+                                            <outlet property="delegate" destination="ZVU-Pj-GyF" id="b69-E4-rh2"/>
+                                        </connections>
+                                    </searchBar>
+                                    <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sis-wN-IC0">
+                                        <rect key="frame" x="116" y="56" width="161" height="32"/>
+                                        <segments>
+                                            <segment title="Movies"/>
+                                            <segment title="TV Shows"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="toggleMovieTVShowSegmentControl:" destination="ZVU-Pj-GyF" eventType="valueChanged" id="Z0H-fh-jtW"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4by-nz-bTL" firstAttribute="width" secondItem="sis-wN-IC0" secondAttribute="height" multiplier="393:31" id="fbs-Zj-lYi"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="z2P-IK-msQ">
+                                <rect key="frame" x="0.0" y="154" width="393" height="664"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZVU-Pj-GyF" id="57i-BY-YjU"/>
+                                    <outlet property="delegate" destination="ZVU-Pj-GyF" id="TBO-cU-Sxd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0zD-9u-cOC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="z2P-IK-msQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3l6-m3-7pW" secondAttribute="bottom" constant="8" id="A4I-gQ-vZT"/>
+                            <constraint firstItem="z2P-IK-msQ" firstAttribute="trailing" secondItem="0zD-9u-cOC" secondAttribute="trailing" id="C3H-QH-Iuf"/>
+                            <constraint firstItem="3l6-m3-7pW" firstAttribute="leading" secondItem="0zD-9u-cOC" secondAttribute="leading" id="Pra-2x-9Vv"/>
+                            <constraint firstItem="3l6-m3-7pW" firstAttribute="top" secondItem="0zD-9u-cOC" secondAttribute="top" id="gJG-oA-Lxa"/>
+                            <constraint firstItem="3l6-m3-7pW" firstAttribute="trailing" secondItem="0zD-9u-cOC" secondAttribute="trailing" id="nrd-qT-MrH"/>
+                            <constraint firstItem="z2P-IK-msQ" firstAttribute="leading" secondItem="0zD-9u-cOC" secondAttribute="leading" id="tk4-pD-QfO"/>
+                            <constraint firstItem="z2P-IK-msQ" firstAttribute="top" secondItem="3l6-m3-7pW" secondAttribute="bottom" constant="8" symbolic="YES" id="u3e-CX-w1Q"/>
+                            <constraint firstItem="0zD-9u-cOC" firstAttribute="bottom" secondItem="z2P-IK-msQ" secondAttribute="bottom" id="zY3-3Q-WSk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieTVShowSegmentControl" destination="sis-wN-IC0" id="5oD-pk-FIu"/>
+                        <outlet property="movieTVShowTableView" destination="z2P-IK-msQ" id="jkE-Yl-5yY"/>
+                        <outlet property="searchMovieTVShowBar" destination="4by-nz-bTL" id="qkZ-H6-UGQ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKH-gk-CGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-182.44274809160305" y="17.605633802816904"/>
         </scene>
     </scenes>
     <resources>

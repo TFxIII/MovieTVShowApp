@@ -3,8 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,52 +11,15 @@
         <scene sceneID="KZJ-wU-Zoa">
             <objects>
                 <viewController storyboardIdentifier="TVShowDetailsViewController" id="OVd-YN-Urs" customClass="TVShowDetailsViewController" customModule="MovieTVShowApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lnz-PA-bcU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GMW-kP-2ed">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dKi-e5-50g">
-                                <rect key="frame" x="0.0" y="59" width="393" height="393"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="393" id="rZa-Xa-3gc"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UGw-eO-vTt">
-                                <rect key="frame" x="20" y="460" width="353" height="48.333333333333314"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTm-pG-VpP">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                        <color key="textColor" name="AccentColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNy-61-FXi">
-                                        <rect key="frame" x="0.0" y="28" width="353" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="fEp-vA-lbk"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="fEp-vA-lbk" firstAttribute="trailing" secondItem="UGw-eO-vTt" secondAttribute="trailing" constant="20" id="1yO-ot-QGg"/>
-                            <constraint firstItem="fEp-vA-lbk" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UGw-eO-vTt" secondAttribute="bottom" constant="20" id="AGQ-wl-n1U"/>
-                            <constraint firstItem="dKi-e5-50g" firstAttribute="top" secondItem="fEp-vA-lbk" secondAttribute="top" id="L2a-ti-Jpl"/>
-                            <constraint firstItem="UGw-eO-vTt" firstAttribute="leading" secondItem="fEp-vA-lbk" secondAttribute="leading" constant="20" id="QCd-5E-fFK"/>
-                            <constraint firstItem="fEp-vA-lbk" firstAttribute="trailing" secondItem="dKi-e5-50g" secondAttribute="trailing" id="VQa-M5-eNi"/>
-                            <constraint firstItem="dKi-e5-50g" firstAttribute="leading" secondItem="fEp-vA-lbk" secondAttribute="leading" id="mgN-LS-vgw"/>
-                            <constraint firstItem="UGw-eO-vTt" firstAttribute="top" secondItem="dKi-e5-50g" secondAttribute="bottom" constant="8" id="p4a-S1-0nV"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="HKa-IZ-ENX"/>
-                    <connections>
-                        <outlet property="posterImageView" destination="dKi-e5-50g" id="eTi-E7-oSj"/>
-                        <outlet property="subtitleLabel" destination="YNy-61-FXi" id="kHJ-ft-kGf"/>
-                        <outlet property="titleLabel" destination="pTm-pG-VpP" id="XpJ-jP-OsJ"/>
-                    </connections>
+                        <connections>
+                            <outlet property="dataSource" destination="OVd-YN-Urs" id="gub-uO-fL0"/>
+                            <outlet property="delegate" destination="OVd-YN-Urs" id="Mng-Q1-ahJ"/>
+                        </connections>
+                    </tableView>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bah-zt-JxJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,9 +27,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
