@@ -54,14 +54,17 @@ class TVShowDetailsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = tvShowDetailsSections[indexPath.section]
-        guard let tvShow = tvShowDetails else {
+        guard tvShowDetails != nil else {
             return UITableViewCell()
         }
         switch section.type {
         case .overview:
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+            cell.textLabel?.textColor = UIColor.systemGray
             cell.textLabel?.text = tvShowDetails?.tagline
             cell.textLabel?.numberOfLines = 0
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
+            cell.detailTextLabel?.textColor = UIColor.systemGray
             cell.detailTextLabel?.text = tvShowDetails?.overview
             cell.detailTextLabel?.numberOfLines = 0
             return cell
@@ -92,21 +95,9 @@ class TVShowDetailsViewController: UITableViewController {
     private func setupHeader() {
         let headerSize = CGSize(width: view.frame.width, height: 300)
         let detailsHeaderView = DetailsHeaderView(frame: .init(origin: .zero, size: headerSize))
-        let roundedVoteAverage = String(format: "%.1f", tvShowDetails?.voteAverage ?? "...")
-        
-        detailsHeaderView.posterImageView.load(path: tvShowDetails?.backdropPath)
-        
-        detailsHeaderView.realeaseDateLabel.text = "First Air Date: \(tvShowDetails?.firstAirDate ?? "...")"
-        
-        detailsHeaderView.voteCountImageView.image = UIImage(systemName: "person.fill")
-        detailsHeaderView.voteCountImageView.tintColor = .systemBlue
-        
-        detailsHeaderView.voteCountLabel.text = "\(tvShowDetails?.voteCount ?? 0)"
-        
-        detailsHeaderView.voteIconImageView.image = UIImage(systemName: "star.fill")
-        detailsHeaderView.voteIconImageView.tintColor = .systemOrange
-        detailsHeaderView.voteAverageLabel.text = roundedVoteAverage
-        
+        if let tvShowDetails = tvShowDetails {
+            detailsHeaderView.content = .tvShowDetails(tvShowDetails)
+        }
         tableView.tableHeaderView = detailsHeaderView
     }
     

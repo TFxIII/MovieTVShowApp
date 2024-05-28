@@ -12,4 +12,8 @@ class TrailerDetailCell: UITableViewCell {
     
     @IBOutlet weak var youTubePlayer: YTPlayerView!
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        youTubePlayer.setCornerRadius(16)
+    }
 }

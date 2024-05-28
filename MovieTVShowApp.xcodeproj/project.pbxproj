@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1756C0D82BD02A85004A496C /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756C0D72BD02A85004A496C /* Cast.swift */; };
+		17A4DC082BDA848600DB5543 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 17A4DC072BDA848600DB5543 /* Alamofire */; };
+		17A4DC0A2BDA848600DB5543 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 17A4DC092BDA848600DB5543 /* AlamofireDynamic */; };
+		17A4DC0D2BDA851100DB5543 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 17A4DC0C2BDA851100DB5543 /* ProgressHUD */; };
+		17A4DC102BDA869800DB5543 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 17A4DC0F2BDA869800DB5543 /* Realm */; };
+		17A4DC122BDA869800DB5543 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 17A4DC112BDA869800DB5543 /* RealmSwift */; };
+		17A4DC152BDA87F900DB5543 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 17A4DC142BDA87F900DB5543 /* YouTubeiOSPlayerHelper */; };
+		17A4DC182BDA887700DB5543 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 17A4DC172BDA887700DB5543 /* SDWebImage */; };
+		17A4DC1A2BDA887700DB5543 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17A4DC192BDA887700DB5543 /* SDWebImageMapKit */; };
+		17A4DC1B2BDA8C2A00DB5543 /* AlamofireDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 17A4DC092BDA848600DB5543 /* AlamofireDynamic */; };
+		17C603872BD96323002258EB /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C603862BD96323002258EB /* DateFormatting.swift */; };
 		17D913482BC3FF7F0018CBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D913472BC3FF7F0018CBE1 /* AppDelegate.swift */; };
 		17D9134A2BC3FF7F0018CBE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D913492BC3FF7F0018CBE1 /* SceneDelegate.swift */; };
 		17D913512BC3FF800018CBE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D913502BC3FF800018CBE1 /* Assets.xcassets */; };
 		17D913542BC3FF800018CBE1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 17D913532BC3FF800018CBE1 /* Base */; };
-		17D9135D2BC3FF920018CBE1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 17D9135C2BC3FF920018CBE1 /* Alamofire */; };
-		17D9135F2BC3FF920018CBE1 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 17D9135E2BC3FF920018CBE1 /* AlamofireDynamic */; };
-		17D913622BC3FFBB0018CBE1 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 17D913612BC3FFBB0018CBE1 /* ProgressHUD */; };
-		17D913652BC3FFDE0018CBE1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 17D913642BC3FFDE0018CBE1 /* Realm */; };
-		17D913672BC3FFDE0018CBE1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 17D913662BC3FFDE0018CBE1 /* RealmSwift */; };
-		17D9136A2BC3FFEA0018CBE1 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 17D913692BC3FFEA0018CBE1 /* YouTubeiOSPlayerHelper */; };
-		17D9136D2BC3FFF40018CBE1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 17D9136C2BC3FFF40018CBE1 /* SDWebImage */; };
-		17D9136F2BC3FFF40018CBE1 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17D9136E2BC3FFF40018CBE1 /* SDWebImageMapKit */; };
 		17D913732BC4007F0018CBE1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D913722BC4007F0018CBE1 /* Coordinator.swift */; };
 		17D913752BC4008D0018CBE1 /* MediaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D913742BC4008D0018CBE1 /* MediaCoordinator.swift */; };
 		17D913782BC400DC0018CBE1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D913772BC400DC0018CBE1 /* NetworkService.swift */; };
@@ -56,8 +57,22 @@
 		17D9140D2BCEEC9E0018CBE1 /* TrailerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D9140C2BCEEC9E0018CBE1 /* TrailerDetailCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		17A4DC1C2BDA8C2A00DB5543 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				17A4DC1B2BDA8C2A00DB5543 /* AlamofireDynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1756C0D72BD02A85004A496C /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
+		17C603862BD96323002258EB /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 		17D913442BC3FF7F0018CBE1 /* MovieTVShowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTVShowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D913472BC3FF7F0018CBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17D913492BC3FF7F0018CBE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,20 +120,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17D913622BC3FFBB0018CBE1 /* ProgressHUD in Frameworks */,
-				17D9135D2BC3FF920018CBE1 /* Alamofire in Frameworks */,
-				17D913652BC3FFDE0018CBE1 /* Realm in Frameworks */,
-				17D9136D2BC3FFF40018CBE1 /* SDWebImage in Frameworks */,
-				17D913672BC3FFDE0018CBE1 /* RealmSwift in Frameworks */,
-				17D9135F2BC3FF920018CBE1 /* AlamofireDynamic in Frameworks */,
-				17D9136F2BC3FFF40018CBE1 /* SDWebImageMapKit in Frameworks */,
-				17D9136A2BC3FFEA0018CBE1 /* YouTubeiOSPlayerHelper in Frameworks */,
+				17A4DC0D2BDA851100DB5543 /* ProgressHUD in Frameworks */,
+				17A4DC082BDA848600DB5543 /* Alamofire in Frameworks */,
+				17A4DC102BDA869800DB5543 /* Realm in Frameworks */,
+				17A4DC182BDA887700DB5543 /* SDWebImage in Frameworks */,
+				17A4DC122BDA869800DB5543 /* RealmSwift in Frameworks */,
+				17A4DC0A2BDA848600DB5543 /* AlamofireDynamic in Frameworks */,
+				17A4DC1A2BDA887700DB5543 /* SDWebImageMapKit in Frameworks */,
+				17A4DC152BDA87F900DB5543 /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17C603852BD96306002258EB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				17C603862BD96323002258EB /* DateFormatting.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		17D9133B2BC3FF7F0018CBE1 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +168,7 @@
 				17D913F22BCE7BC70018CBE1 /* Header */,
 				17D913852BC4060B0018CBE1 /* Cell */,
 				17D913792BC401030018CBE1 /* Controllers */,
+				17C603852BD96306002258EB /* Utilities */,
 				17D913862BC4061E0018CBE1 /* Extensions */,
 				17D913842BC405EB0018CBE1 /* Stroryboards */,
 				17D9138C2BC406810018CBE1 /* Resources */,
@@ -373,7 +397,6 @@
 			children = (
 				17D913902BC4093D0018CBE1 /* Movie.swift */,
 				17D913B42BC457260018CBE1 /* MovieDetails.swift */,
-				1756C0D72BD02A85004A496C /* Cast.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -424,6 +447,7 @@
 				17D913402BC3FF7F0018CBE1 /* Sources */,
 				17D913412BC3FF7F0018CBE1 /* Frameworks */,
 				17D913422BC3FF7F0018CBE1 /* Resources */,
+				17A4DC1C2BDA8C2A00DB5543 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -431,14 +455,14 @@
 			);
 			name = MovieTVShowApp;
 			packageProductDependencies = (
-				17D9135C2BC3FF920018CBE1 /* Alamofire */,
-				17D9135E2BC3FF920018CBE1 /* AlamofireDynamic */,
-				17D913612BC3FFBB0018CBE1 /* ProgressHUD */,
-				17D913642BC3FFDE0018CBE1 /* Realm */,
-				17D913662BC3FFDE0018CBE1 /* RealmSwift */,
-				17D913692BC3FFEA0018CBE1 /* YouTubeiOSPlayerHelper */,
-				17D9136C2BC3FFF40018CBE1 /* SDWebImage */,
-				17D9136E2BC3FFF40018CBE1 /* SDWebImageMapKit */,
+				17A4DC072BDA848600DB5543 /* Alamofire */,
+				17A4DC092BDA848600DB5543 /* AlamofireDynamic */,
+				17A4DC0C2BDA851100DB5543 /* ProgressHUD */,
+				17A4DC0F2BDA869800DB5543 /* Realm */,
+				17A4DC112BDA869800DB5543 /* RealmSwift */,
+				17A4DC142BDA87F900DB5543 /* YouTubeiOSPlayerHelper */,
+				17A4DC172BDA887700DB5543 /* SDWebImage */,
+				17A4DC192BDA887700DB5543 /* SDWebImageMapKit */,
 			);
 			productName = MovieTVShowApp;
 			productReference = 17D913442BC3FF7F0018CBE1 /* MovieTVShowApp.app */;
@@ -469,11 +493,11 @@
 			);
 			mainGroup = 17D9133B2BC3FF7F0018CBE1;
 			packageReferences = (
-				17D9135B2BC3FF920018CBE1 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				17D913602BC3FFBB0018CBE1 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
-				17D913632BC3FFDE0018CBE1 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				17D913682BC3FFEA0018CBE1 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
-				17D9136B2BC3FFF40018CBE1 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				17A4DC062BDA848600DB5543 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				17A4DC0B2BDA851100DB5543 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				17A4DC0E2BDA869800DB5543 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				17A4DC132BDA87F900DB5543 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+				17A4DC162BDA887700DB5543 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 17D913452BC3FF7F0018CBE1 /* Products */;
 			projectDirPath = "";
@@ -530,13 +554,13 @@
 				17D914062BCEE3180018CBE1 /* TVShowDetails.swift in Sources */,
 				17D913AD2BC42B8D0018CBE1 /* StorageError.swift in Sources */,
 				17D913F82BCE80B20018CBE1 /* UIView+LoadXib.swift in Sources */,
-				1756C0D82BD02A85004A496C /* Cast.swift in Sources */,
 				17D913972BC415180018CBE1 /* UIView+CornerRadius.swift in Sources */,
 				17D913952BC412E60018CBE1 /* MovieTVShowTableViewCell.swift in Sources */,
 				17D9134A2BC3FF7F0018CBE1 /* SceneDelegate.swift in Sources */,
 				17D913C62BC6D1E90018CBE1 /* TVShowDetailsViewController.swift in Sources */,
 				17D913BE2BC687EC0018CBE1 /* DBTVShow.swift in Sources */,
 				17D913AB2BC429A70018CBE1 /* DBMovie.swift in Sources */,
+				17C603872BD96323002258EB /* DateFormatting.swift in Sources */,
 				17D913A12BC41A680018CBE1 /* MovieDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,7 +633,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -668,7 +692,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -683,14 +707,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8W4FA6WHSL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieTVShowApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -713,14 +740,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8W4FA6WHSL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieTVShowApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,7 +792,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		17D9135B2BC3FF920018CBE1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		17A4DC062BDA848600DB5543 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -770,7 +800,7 @@
 				minimumVersion = 5.9.1;
 			};
 		};
-		17D913602BC3FFBB0018CBE1 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+		17A4DC0B2BDA851100DB5543 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
 			requirement = {
@@ -778,15 +808,15 @@
 				minimumVersion = 14.1.1;
 			};
 		};
-		17D913632BC3FFDE0018CBE1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		17A4DC0E2BDA869800DB5543 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.49.2;
 			};
 		};
-		17D913682BC3FFEA0018CBE1 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+		17A4DC132BDA87F900DB5543 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper.git";
 			requirement = {
@@ -794,7 +824,7 @@
 				minimumVersion = 1.0.4;
 			};
 		};
-		17D9136B2BC3FFF40018CBE1 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		17A4DC162BDA887700DB5543 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
@@ -805,44 +835,44 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		17D9135C2BC3FF920018CBE1 /* Alamofire */ = {
+		17A4DC072BDA848600DB5543 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17D9135B2BC3FF920018CBE1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 17A4DC062BDA848600DB5543 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		17D9135E2BC3FF920018CBE1 /* AlamofireDynamic */ = {
+		17A4DC092BDA848600DB5543 /* AlamofireDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17D9135B2BC3FF920018CBE1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 17A4DC062BDA848600DB5543 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
 		};
-		17D913612BC3FFBB0018CBE1 /* ProgressHUD */ = {
+		17A4DC0C2BDA851100DB5543 /* ProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17D913602BC3FFBB0018CBE1 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			package = 17A4DC0B2BDA851100DB5543 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
 			productName = ProgressHUD;
 		};
-		17D913642BC3FFDE0018CBE1 /* Realm */ = {
+		17A4DC0F2BDA869800DB5543 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17D913632BC3FFDE0018CBE1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 17A4DC0E2BDA869800DB5543 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		17D913662BC3FFDE0018CBE1 /* RealmSwift */ = {
+		17A4DC112BDA869800DB5543 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17D913632BC3FFDE0018CBE1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 17A4DC0E2BDA869800DB5543 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
-		17D913692BC3FFEA0018CBE1 /* YouTubeiOSPlayerHelper */ = {
+		17A4DC142BDA87F900DB5543 /* YouTubeiOSPlayerHelper */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17D913682BC3FFEA0018CBE1 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			package = 17A4DC132BDA87F900DB5543 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
 			productName = YouTubeiOSPlayerHelper;
 		};
-		17D9136C2BC3FFF40018CBE1 /* SDWebImage */ = {
+		17A4DC172BDA887700DB5543 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17D9136B2BC3FFF40018CBE1 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 17A4DC162BDA887700DB5543 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		17D9136E2BC3FFF40018CBE1 /* SDWebImageMapKit */ = {
+		17A4DC192BDA887700DB5543 /* SDWebImageMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17D9136B2BC3FFF40018CBE1 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 17A4DC162BDA887700DB5543 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

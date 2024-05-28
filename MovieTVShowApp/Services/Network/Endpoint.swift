@@ -67,7 +67,6 @@ enum Endpoint: URLRequestConvertible {
         return parameters
     }
     
-    
     func asURLRequest() throws -> URLRequest {
         let baseURL = try Constants.baseURL.asURL()
         let fullURL = baseURL.appendingPathComponent(path)

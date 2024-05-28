@@ -16,9 +16,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let navigationController = UINavigationController()
-        navigationController.navigationItem.largeTitleDisplayMode = .always
-        navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.navigationBar.isTranslucent = true
         navigationController.setNavigationBarHidden(true, animated: false)
         
         coordinator = TabCoordinator(navigationController)

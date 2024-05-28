@@ -40,6 +40,7 @@ class TabCoordinator: NSObject, Coordinator {
         tabBarController.setViewControllers(tabControllers, animated: true)
         tabBarController.selectedIndex = TabBarPage.media.pageOrder
         tabBarController.tabBar.isTranslucent = true
+        tabBarController.tabBar.selectedImageTintColor = .systemPurple
         navigationController.viewControllers = [tabBarController]
     }
       

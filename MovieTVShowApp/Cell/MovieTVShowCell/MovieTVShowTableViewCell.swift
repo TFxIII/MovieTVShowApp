@@ -19,8 +19,6 @@ class MovieTVShowTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         posterImageView.setCornerRadius(16.0)
-        voteAverageImageView.image = UIImage(systemName: "star.fill")
-        voteAverageImageView.tintColor = .systemOrange
     }
     
     func setupCell(for content: CellContentType) {
@@ -29,17 +27,27 @@ class MovieTVShowTableViewCell: UITableViewCell {
             posterImageView.load(path: movie.posterPath)
             movieTitleLabel.text = movie.title
             movieSubtitleLabel.text = movie.overview
+            movieSubtitleLabel.textColor = .systemGray
             let roundedVoteAverage = String(format: "%.1f", movie.voteAverage)
             voteAverageLabel.text = roundedVoteAverage
-            releaseDateLabel.text = "\(movie.releaseDate ?? "...")"
+            if let formattedDate = formatDate(movie.releaseDate ?? " ", "MMM, yyyy") {
+                releaseDateLabel.text = formattedDate
+            } else {
+                releaseDateLabel.text = "..."
+            }
             
         case .tvShow(let tvShow):
             posterImageView.load(path: tvShow.posterPath)
             movieTitleLabel.text = tvShow.title
             movieSubtitleLabel.text = tvShow.overview
+            movieSubtitleLabel.textColor = .systemGray
             let roundedVoteAverage = String(format: "%.1f", tvShow.voteAverage)
             voteAverageLabel.text = roundedVoteAverage
-            releaseDateLabel.text = "\(tvShow.releaseDate ?? "...")"
+            if let formattedDate = formatDate(tvShow.releaseDate ?? " ", "MMM, yyyy") {
+                releaseDateLabel.text = formattedDate
+            } else {
+                releaseDateLabel.text = "..."
+            }
         }
     }
 }

@@ -32,7 +32,6 @@ class MovieTVShowViewController: UIViewController, UITableViewDataSource, UITabl
         searchMovieTVShowBar.delegate = self
         registerCells()
         fetchMovies()
-        fetchTVShows()
     }
     
     override func viewWillAppear(_ animated: Bool) {

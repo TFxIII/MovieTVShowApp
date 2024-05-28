@@ -10,6 +10,7 @@ import YouTubeiOSPlayerHelper
 
 enum MovieDetailsSectionType: String, CaseIterable {
     case overview
+    case cast
     case trailer
     
     var title: String {
@@ -30,7 +31,8 @@ class MovieDetailsViewController: UITableViewController {
     
     private var movieDetailsSections: [MovieDetailsSection] = [
         .init(type: .overview),
-        .init(type: .trailer)
+        .init(type: .trailer),
+        .init(type: .cast)
     ]
     
     override func viewDidLoad() {
@@ -59,10 +61,20 @@ class MovieDetailsViewController: UITableViewController {
         switch section.type {
         case .overview:
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+//            cell.textLabel?.textColor = UIColor.systemGray
             cell.textLabel?.text = movieDetails?.tagline
             cell.textLabel?.numberOfLines = 0
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
+            cell.detailTextLabel?.textColor = UIColor.systemGray
             cell.detailTextLabel?.text = movieDetails?.overview
             cell.detailTextLabel?.numberOfLines = 0
+            return cell
+        case.cast:
+            let cell = UITableViewCell()
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+            cell.textLabel?.textColor = UIColor.systemGray
+            cell.textLabel?.text = movieDetails?.actors
+            cell.textLabel?.numberOfLines = 0
             return cell
         case .trailer:
             let cell = tableView.dequeue(TrailerDetailCell.self, forIndexPath: indexPath)
@@ -91,21 +103,9 @@ class MovieDetailsViewController: UITableViewController {
     private func setupHeader() {
         let headerSize = CGSize(width: view.frame.width, height: 300)
         let detailsHeaderView = DetailsHeaderView(frame: .init(origin: .zero, size: headerSize))
-        let roundedVoteAverage = String(format: "%.1f", movieDetails?.voteAverage ?? "...")
-        
-        detailsHeaderView.posterImageView.load(path: movieDetails?.backdropPath)
-        
-        detailsHeaderView.realeaseDateLabel.text = "Release Date: \(movieDetails?.releaseDate ?? "...")"
-        
-        detailsHeaderView.voteCountImageView.image = UIImage(systemName: "person.fill")
-        detailsHeaderView.voteCountImageView.tintColor = .systemBlue
-        
-        detailsHeaderView.voteCountLabel.text = "\(movieDetails?.voteCount ?? 0)"
-        
-        detailsHeaderView.voteIconImageView.image = UIImage(systemName: "star.fill")
-        detailsHeaderView.voteIconImageView.tintColor = .systemOrange
-        detailsHeaderView.voteAverageLabel.text = roundedVoteAverage
-        
+        if let movieDetails = movieDetails {
+            detailsHeaderView.content = .movieDetails(movieDetails)
+        }
         tableView.tableHeaderView = detailsHeaderView
     }
     
